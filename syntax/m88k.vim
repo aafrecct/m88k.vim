@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language: 88110 assembly
+" Language: m88k assembly
 " Maintainer: Borja Martinena
 " Last Change: 17-11-2020
 " Version: 0.1
@@ -11,7 +11,7 @@ if !exists("main_syntax")
     if exists("b:main_syntax")
         finish
     endif
-    let main_syntax = '88110assembly'
+    let main_syntax = 'm88k'
 endif
 syn case ignore
 
@@ -48,7 +48,7 @@ hi def link eekIMMn Constant
 hi def link eekLabel Label
 hi def link eekComment Comment
 
-let b:current_syntax = "88110assembly"
-if main_syntax == '88110assembly'
+let b:current_syntax = "m88k"
+if main_syntax == 'm88k'
     unlet main_syntax
 endif
