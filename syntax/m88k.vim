@@ -18,11 +18,6 @@ syn case ignore
 " Labels
 syn match eekLabel "\v.*:" 
 
-" Labels
-syn match eekLabNm contained "\v.*(:)@="
-syn match eekLabel "\v.*:" contains=eekLabNm
-syn match eekLabel "" contains=eekLabNm
-
 " OpCodes
 syn keyword eekOpCode and xor or mask
 syn keyword eekOpCode add addu sub subu
@@ -34,7 +29,7 @@ syn keyword eekOpCode ld st ldcr stcr xmem
 syn keyword eekOpCode cmp fcmp
 
 " Extension codes
-syn match eekExCode "\v(\s)@!\..*\s"
+syn match eekExCode "\v(\s)@!\.(.*)(\s)@="
 
 " PseudoInstructions
 syn keyword eekPsInst org data res
