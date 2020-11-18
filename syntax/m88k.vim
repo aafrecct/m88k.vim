@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language: m88k assembly
 " Maintainer: Borja Martinena
-" Last Change: 17-11-2020
-" Version: 0.1
+" Last Change: 18-11-2020
+" Version: 0.11
 " Description: A project for an emulator used at ETSIINF UPM for the subject:
 " Estructura de Computadores.
 "
@@ -15,6 +15,16 @@ if !exists("main_syntax")
 endif
 syn case ignore
 
+" Labels
+syn match eekLabNm contained "\v.*(:)@="
+syn match eekLabel "\v.*:" contains=eekLabNm
+syn match eekLabel "\v.*" contains=eekLabNm
+
+" Labels
+syn match eekLabNm contained "\v.*(:)@="
+syn match eekLabel "\v.*:" contains=eekLabNm
+syn match eekLabel "" contains=eekLabNm
+
 " OpCodes
 syn keyword eekOpCode and xor or mask
 syn keyword eekOpCode add addu sub subu
@@ -25,6 +35,9 @@ syn keyword eekOpCode bb0 bb1 br bsr jmp jsr
 syn keyword eekOpCode ld st ldcr stcr xmem 
 syn keyword eekOpCode cmp fcmp
 
+" Extension codes
+syn match eekExCode "\v(\s)@!\..*"
+
 " PseudoInstructions
 syn keyword eekPsInst org data res
 
@@ -33,12 +46,13 @@ syn match eekRegister "\vr(3[012]|[012][0-9]|[0-9](\d)@!)"
 
 " Immediate numbers.
 syn match eekIMMn "\d"
+syn match eekIMMn "0x\d"
+
+" Strings
+syn region eekString start="\"" end="\""
 
 " Comments
 syn match eekComment "\v;.*$"
-
-" Labels
-syn match eekLabel /\v.*:/
 
 " Link to defaults
 hi def link eekRegister Identifier

@@ -1,0 +1,13 @@
+; This is a comment.
+data:   org 0x20
+        data 1, 2, 3, 4, 5
+        data "String"
+        
+        org 0x100
+label:  or r30, r0, 0x20
+        addu r4, r4, r5         ; Another Comment
+        divu r4, r4, 2
+        ld.bu r4, r30, 8
+        cmp r7, r4, r5
+        bb0 eq, r7, label
+
