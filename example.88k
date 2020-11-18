@@ -1,5 +1,5 @@
 ; This is a comment.
-data:   org 0x20
+memdata:org 0x20
         data 1, 2, 3, 4, 5
         data "String"
         
