@@ -2,7 +2,7 @@
     "name" : "m88k.vim",
     "version" : "dev",
     "author" : "Borja Martinena",
-    "repository" : {"type":"git", "url":"https://github.com/aafrecct/m88k.vim/"},
+    "repository" : {"type":"git", "url":"https://github.com/aafrecct/m88k.vim/tree/main/"},
     "dependencies" : {},
     "description" : "Vim syntax file for the m88k assembly language."
 }
