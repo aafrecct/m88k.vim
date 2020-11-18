@@ -16,9 +16,7 @@ endif
 syn case ignore
 
 " Labels
-syn match eekLabNm contained "\v.*(:)@="
-syn match eekLabel "\v.*:" contains=eekLabNm
-syn match eekLabel "\v.*" contains=eekLabNm
+syn match eekLabel "\v.*:" 
 
 " Labels
 syn match eekLabNm contained "\v.*(:)@="
@@ -36,7 +34,7 @@ syn keyword eekOpCode ld st ldcr stcr xmem
 syn keyword eekOpCode cmp fcmp
 
 " Extension codes
-syn match eekExCode "\v(\s)@!\..*"
+syn match eekExCode "\v(\s)@!\..*\s"
 
 " PseudoInstructions
 syn keyword eekPsInst org data res
@@ -58,8 +56,10 @@ syn match eekComment "\v;.*$"
 hi def link eekRegister Identifier
 hi def link eekOpCode Keyword
 hi def link eekPsInst Keyword
+hi def link eekExCode PreProc
 hi def link eekIMMn Constant
 hi def link eekLabel Label
+hi def link eekString String
 hi def link eekComment Comment
 
 let b:current_syntax = "m88k"
