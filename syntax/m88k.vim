@@ -29,9 +29,9 @@ syn keyword eekOpCode ld st ldcr stcr xmem
 syn keyword eekOpCode cmp fcmp
 
 " Extension codes
-syn keyword eekExCodC contained b c d h n s u y
-syn keyword eekExCodC contained bu ci co cio hu wt
-syn match eekExCode "\.\S*" contains=eekExCodC
+"syn keyword eekExCodC contained b c d h n s u y
+"syn keyword eekExCodC contained bu ci co cio hu wt
+syn match eekExCode "\v\.[^\s\d]+" contains=eekExCodC
 
 " PseudoInstructions
 syn keyword eekPsInst org data res
@@ -40,8 +40,7 @@ syn keyword eekPsInst org data res
 syn match eekRegister "\vr(3[012]|[012][0-9]|[0-9](\d)@!)"
 
 " Immediate numbers.
-syn match eekIMMn "\d"
-syn match eekIMMn "0x\d"
+syn match eekIMMn "\v([+-]( |)|)\d(\.\d|)"
 
 " Strings
 syn region eekString start=/"/ end=/"/
