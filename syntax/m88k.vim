@@ -31,7 +31,7 @@ syn keyword eekOpCode cmp fcmp
 " Extension codes
 syn keyword eekExCodC contained b c d h n s u y
 syn keyword eekExCodC contained bu ci co cio hu wt
-syn match eekExCode ".\S*" contains=eekExCodC
+syn match eekExCode "\.\S*" contains=eekExCodC
 
 " PseudoInstructions
 syn keyword eekPsInst org data res
