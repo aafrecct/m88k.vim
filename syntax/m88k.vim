@@ -29,7 +29,8 @@ syn keyword eekOpCode ld st ldcr stcr xmem
 syn keyword eekOpCode cmp fcmp
 
 " Extension codes
-syn match eekExCode "\v(\s)@!\.\S*"
+syn keyword eekExCode .b .c .d .h .n .s .u .y
+syn keyword eekExCode .bu .ci .co .cio .hu .wt
 
 " PseudoInstructions
 syn keyword eekPsInst org data res
