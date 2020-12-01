@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language: m88k assembly
 " Maintainer: Borja Martinena
-" Last Change: 18-11-2020
-" Version: 0.11
+" Last Change: 1-12-2020
+" Version: 0.12
 " Description: A project for an emulator used at ETSIINF UPM for the subject:
 " Estructura de Computadores.
 "
@@ -16,7 +16,7 @@ endif
 syn case ignore
 
 " Labels
-syn match eekLabel "\v.*:" 
+syn match eekLabel "\v^(\S)*:" 
 
 " OpCodes
 syn keyword eekOpCode and xor or mask
@@ -35,12 +35,13 @@ syn match eekExCode "\v\.[A-z]+" contains=eekExCodC
 
 " PseudoInstructions
 syn keyword eekPsInst org data res
+syn keyword eekMacros MACRO ENDMACRO 
 
 " 32 Registers
 syn match eekRegister "\vr(3[012]|[012][0-9]|[0-9](\d)@!)"
 
 " Immediate numbers.
-syn match eekIMMn "\v([+-]( |)|)\d(\.\d|)"
+syn match eekIMMn "\v([+-]( |)|)(0x|)\d(\.\d|)"
 
 " Strings
 syn region eekString start=/"/ end=/"/
@@ -53,6 +54,7 @@ hi def link eekRegister Identifier
 hi def link eekOpCode Keyword
 hi def link eekPsInst Keyword
 hi def link eekExCode PreProc
+hi def link eekMacros Define
 hi def link eekIMMn Constant
 hi def link eekLabel Label
 hi def link eekString String
