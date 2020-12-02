@@ -4,7 +4,7 @@
 " Last Change: 1-12-2020
 " Version: 0.12
 " Description: A project for an emulator used at ETSIINF UPM for the subject:
-" Estructura de Computadores.
+" Estructura de Computadores. 'eek' stands for Eighty-Eight Thousand (88k).
 "
 
 if !exists("main_syntax")
@@ -40,8 +40,15 @@ syn keyword eekMacros MACRO ENDMACRO
 " 32 Registers
 syn match eekRegister "\vr(3[012]|[012][0-9]|[0-9](\d)@!)"
 
+" Comparison bits
+syn keyword eekCmpBit nh he nb be
+syn keyword eekCmpBit hs lo ls hi
+syn keyword eekCmpBit ge lt le gt
+syn keyword eekCmpBit ne eq
+
 " Immediate numbers.
-syn match eekIMMn "\v([+-]( |)|)(0x|)\d(\.\d|)"
+syn match eekIMMn "\v([+-]( |)|)\d(\.\d|)"
+syn match eekIMMn "\v([+-]( |)|)0x(\d|[a-f]|[A-F])*"
 
 " Strings
 syn region eekString start=/"/ end=/"/
@@ -51,6 +58,7 @@ syn match eekComment "\v;.*$"
 
 " Link to defaults
 hi def link eekRegister Identifier
+hi def link eekCmpBit Identifier
 hi def link eekOpCode Keyword
 hi def link eekPsInst Keyword
 hi def link eekExCode PreProc
