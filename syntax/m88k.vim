@@ -49,9 +49,7 @@ syn keyword eekCmpBit ne eq
 " Immediate numbers.
 syn match eekIMMn "\v( |,)@<=([+-]( |)|)(\d+)(\.(\d)+|)"
 syn match eekIMMn "\v( |,)@<=([+-]( |)|)0x(\d|[a-f]|[A-F])+"
- 999
- 9
- 2.35
+
 " Strings
 syn region eekString start=/"/ end=/"/
 
