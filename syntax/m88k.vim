@@ -47,8 +47,8 @@ syn keyword eekCmpBit ge lt le gt
 syn keyword eekCmpBit ne eq
 
 " Immediate numbers.
-syn match eekIMMn "\v([+-]( |)|)\d(\.\d|)"
-syn match eekIMMn "\v([+-]( |)|)0x(\d|[a-f]|[A-F])*"
+syn match eekIMMn "\v( |,)@<=([+-]( |)|)\d(\.\d|)"
+syn match eekIMMn "\v( |,)@<=([+-]( |)|)0x(\d|[a-f]|[A-F])*"
 
 " Strings
 syn region eekString start=/"/ end=/"/
