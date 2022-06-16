@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language: m88k assembly
 " Maintainer: Borja Martinena
-" Last Change: 1-12-2020
-" Version: 0.12
+" Last Change: 16-6-2022
+" Version: 0.2
 " Description: A project for an emulator used at ETSIINF UPM for the subject:
 " Estructura de Computadores. 'eek' stands for Eighty-Eight Thousand (88k).
 "
@@ -17,6 +17,8 @@ syn case ignore
 
 " Labels
 syn match eekLabel "\v^(\S)*:" 
+syn match eekLabel "\v(bb0|bb1|br|bsr|jmp|jsr).+,.+,\s?\zs\w{-}[^0-9 ]\w*"
+
 
 " OpCodes
 syn keyword eekOpCode and xor or mask
@@ -38,7 +40,7 @@ syn keyword eekPsInst org data res
 syn keyword eekMacros MACRO ENDMACRO 
 
 " 32 Registers
-syn match eekRegister "\vr(3[012]|[012][0-9]|[0-9](\d)@!)"
+syn match eekRegister "\v([,\.]|\s|^)\zsr(3[012]|[012]?[0-9])\ze([,\.]|\s|$)"
 
 " Comparison bits
 syn keyword eekCmpBit nh he nb be

@@ -16,3 +16,8 @@ label:  or r30, r0, 0x20
         cmp r7, r4, r5
         bb0 eq, r7, label
 
+labelwithr3: cmp r7, r0, r1
+             bb0 eq, r7, labelwithr3
+             bb0 eq, r7, labelwithr3
+             bb0 eq, r7, labelwithr3
+             bb0 eq, r7, 506
